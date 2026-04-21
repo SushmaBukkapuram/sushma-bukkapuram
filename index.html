@@ -9,25 +9,25 @@
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
-  --cream: #faf7f2;
-  --cream2: #f3ede3; --cream3: #e0d4c4;
-  --text: #2a1f14; --text2: #6b5a48; --text3: #a8978a;
-  --terra: #c4614a; --terra2: #e8856f; --terra3: #f5d5ce;
-  --sage: #7a9e7e; --sage2: #d4e8d6;
-  --gold: #c9921a; --gold2: #f5e6c8;
-  --blue: #3d6b9e; --blue2: #d0e4f7;
-  --purple: #7a5ea8; --purple2: #ede5f7;
+  --cream: #1a1a2e;
+  --cream2: #16213e; --cream3: #2d3561;
+  --text: #f0e6d3; --text2: #b8a99a; --text3: #7a6e65;
+  --terra: #e8856f; --terra2: #f5a591; --terra3: #3d2420;
+  --sage: #7a9e7e; --sage2: #1a2f1c;
+  --gold: #e8b84b; --gold2: #2a2010;
+  --blue: #6ba3d6; --blue2: #1a2535;
+  --purple: #a085d4; --purple2: #1e1530;
   --serif: 'Playfair Display', Georgia, serif;
   --body: 'Plus Jakarta Sans', system-ui, sans-serif;
 
-  /* Section background colours */
-  --bg-hero:       #faf7f2;
-  --bg-about:      #f0f4f0;   /* soft sage green */
-  --bg-projects:   #faf7f2;   /* back to cream */
-  --bg-experience: #f0f4fa;   /* soft blue */
-  --bg-education:  #fdf6ee;   /* warm amber */
-  --bg-skills:     #f7f0fb;   /* soft lavender */
-  --bg-contact:    #f0f6f4;   /* mint */
+  /* Section background colours — dark palette */
+  --bg-hero:       #0f0f1a;
+  --bg-about:      #0d1a12;   /* deep forest green */
+  --bg-projects:   #0f0f1a;   /* near-black */
+  --bg-experience: #0a1220;   /* deep navy */
+  --bg-education:  #1a1205;   /* deep amber */
+  --bg-skills:     #140d1f;   /* deep purple */
+  --bg-contact:    #0a1a16;   /* deep teal */
 }
 html { scroll-behavior: smooth; }
 body { background: var(--bg-hero); color: var(--text); font-family: var(--body); font-weight: 400; line-height: 1.7; overflow-x: hidden; }
@@ -37,10 +37,10 @@ nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
   display: flex; align-items: center; justify-content: space-between;
   padding: 1rem 2.5rem;
-  background: rgba(250,247,242,0.95); backdrop-filter: blur(16px);
+  background: rgba(15,15,26,0.95); backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--cream3);
 }
-.nav-logo { font-family: var(--serif); font-size: 17px; font-weight: 600; color: var(--text); text-decoration: none; }
+.nav-logo { font-family: var(--serif); font-size: 17px; font-weight: 600; color: var(--terra); text-decoration: none; }
 .nav-logo span { color: var(--terra); font-style: italic; }
 .nav-links { display: flex; gap: 1.75rem; list-style: none; }
 .nav-links a { font-size: 13px; font-weight: 500; color: var(--text2); text-decoration: none; transition: color 0.2s; }
@@ -69,20 +69,20 @@ h3, .acard-title { font-family: var(--serif); font-size: 1.15rem; font-weight: 6
 
 .hero-bio { font-size: 16px; font-weight: 300; color: var(--text2); line-height: 1.8; max-width: 520px; margin-bottom: 1.5rem; }
 .hero-bio strong { color: var(--text); font-weight: 600; }
-.auth-badge { display: inline-flex; align-items: center; gap: 7px; padding: 7px 14px; background: var(--sage2); border: 1px solid var(--sage); border-radius: 20px; font-size: 12px; font-weight: 600; color: #3d6b41; margin-bottom: 2rem; }
+.auth-badge { display: inline-flex; align-items: center; gap: 7px; padding: 7px 14px; background: rgba(122,158,126,0.15); border: 1px solid rgba(122,158,126,0.4); border-radius: 20px; font-size: 12px; font-weight: 600; color: #7fc485; margin-bottom: 2rem; }
 .auth-badge::before { content: '✓'; }
 .ctas { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 3rem; }
 .btn { display: inline-flex; align-items: center; gap: 7px; padding: 0.7rem 1.4rem; font-size: 14px; font-weight: 500; font-family: var(--body); border-radius: 7px; text-decoration: none; transition: all 0.2s; cursor: pointer; border: none; }
 .btn-p { background: var(--terra); color: #fff; }
 .btn-p:hover { background: #b05540; transform: translateY(-1px); box-shadow: 0 4px 14px rgba(196,97,74,0.3); }
-.btn-o { background: transparent; color: var(--text); border: 1.5px solid var(--cream3); }
-.btn-o:hover { border-color: var(--text3); background: var(--cream2); }
-.hero-stats { display: flex; gap: 2rem; padding-top: 2rem; border-top: 1px solid var(--cream3); }
+.btn-o { background: transparent; color: var(--text); border: 1.5px solid rgba(255,255,255,0.2); }
+.btn-o:hover { border-color: rgba(255,255,255,0.35); background: rgba(255,255,255,0.07); }
+.hero-stats { display: flex; gap: 2rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); }
 .stat-n { font-family: var(--serif); font-size: 2rem; font-weight: 600; color: var(--text); line-height: 1; margin-bottom: 3px; }
 .stat-l { font-size: 11px; color: var(--text3); font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; }
 
-.hero-card { background: #fff; border: 1px solid var(--cream3); border-radius: 20px; padding: 2rem; box-shadow: 0 4px 32px rgba(90,60,30,0.08); }
-.avatar { width: 68px; height: 68px; border-radius: 50%; background: linear-gradient(135deg, var(--terra3), var(--gold2)); display: flex; align-items: center; justify-content: center; font-family: var(--serif); font-size: 24px; font-weight: 600; color: var(--terra); margin-bottom: 1rem; border: 3px solid #fff; box-shadow: 0 2px 12px rgba(196,97,74,0.12); }
+.hero-card { background: #1c1c2e; border: 1px solid var(--cream3); border-radius: 20px; padding: 2rem; box-shadow: 0 4px 32px rgba(90,60,30,0.08); }
+.avatar { width: 68px; height: 68px; border-radius: 50%; background: linear-gradient(135deg, #3d2420, #2a2010); display: flex; align-items: center; justify-content: center; font-family: var(--serif); font-size: 24px; font-weight: 600; color: var(--terra); margin-bottom: 1rem; border: 3px solid #2a2a3e; box-shadow: 0 2px 12px rgba(196,97,74,0.12); }
 .card-name { font-family: var(--serif); font-size: 17px; font-weight: 600; color: var(--text); margin-bottom: 2px; }
 .card-title { font-size: 12px; color: var(--text3); margin-bottom: 1.25rem; font-weight: 500; }
 .card-div { border: none; border-top: 1px solid var(--cream3); margin: 1rem 0; }
@@ -91,8 +91,8 @@ h3, .acard-title { font-family: var(--serif); font-size: 1.15rem; font-weight: 6
 .crv { font-size: 12px; color: var(--text); font-weight: 500; }
 .crv.g { color: var(--sage); } .crv.t { color: var(--terra); }
 .badge { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; border-radius: 8px; font-size: 11px; font-weight: 600; width: 100%; justify-content: center; margin-top: 8px; }
-.badge-gold { background: var(--gold2); color: var(--gold); border: 1px solid #e8c97a; }
-.badge-sage { background: var(--sage2); color: #3d6b41; border: 1px solid #a8d4ac; }
+.badge-gold { background: rgba(232,184,75,0.15); color: var(--gold); border: 1px solid rgba(232,184,75,0.35); }
+.badge-sage { background: rgba(122,158,126,0.15); color: #7fc485; border: 1px solid rgba(122,158,126,0.35); }
 
 /* SECTION WRAPPERS with distinct bg */
 .section-wrap { width: 100%; }
@@ -104,42 +104,42 @@ h3, .acard-title { font-family: var(--serif); font-size: 1.15rem; font-weight: 6
 .section-wrap.contact-bg    { background: var(--bg-contact); }
 
 section { padding: 5rem 2.5rem; max-width: 1100px; margin: 0 auto; }
-.divider { border: none; border-top: 1px solid var(--cream3); }
+.divider { border: none; border-top: 1px solid rgba(255,255,255,0.07); }
 .eyebrow { font-size: 11px; font-weight: 700; color: var(--terra); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 0.6rem; display: flex; align-items: center; gap: 8px; }
 .eyebrow::after { content: ''; width: 36px; height: 1.5px; background: var(--terra3); border-radius: 1px; }
 
 /* ABOUT */
 .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.75rem; margin-top: 2rem; align-items: start; }
 .col-label { font-family: var(--serif); font-size: 13px; font-weight: 700; color: var(--terra); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.75rem; }
-.acard { background: #fff; border: 1px solid rgba(0,0,0,0.07); border-radius: 16px; padding: 1.75rem; transition: box-shadow 0.2s; }
-.acard:hover { box-shadow: 0 4px 20px rgba(90,60,30,0.09); }
-.acard.insta { background: linear-gradient(135deg, #fff5f0, #fffaf8); border-color: #f5cec8; }
-.acard.edu-highlight { background: linear-gradient(135deg, #fdf5eb, #faf0e8); border-color: #f0d9b8; }
+.acard { background: #1c1c2e; border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 1.75rem; transition: box-shadow 0.2s; }
+.acard:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.4); }
+.acard.insta { background: linear-gradient(135deg, #1f1510, #1a1208); border-color: #3d2820; }
+.acard.edu-highlight { background: linear-gradient(135deg, #1a1508, #141005); border-color: #3a2e10; }
 .acard-icon { font-size: 28px; margin-bottom: 0.75rem; }
 .acard-text { font-size: 14px; color: var(--text2); line-height: 1.8; font-weight: 300; }
 .acard-text strong { color: var(--text); font-weight: 600; }
 .pills { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 1rem; }
-.pill { display: inline-flex; align-items: center; gap: 5px; padding: 5px 12px; background: var(--cream2); border: 1px solid var(--cream3); border-radius: 20px; font-size: 12px; font-weight: 500; color: var(--text2); transition: all 0.2s; }
+.pill { display: inline-flex; align-items: center; gap: 5px; padding: 5px 12px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 20px; font-size: 12px; font-weight: 500; color: var(--text2); transition: all 0.2s; }
 .pill:hover { background: var(--terra3); border-color: var(--terra2); color: var(--terra); }
 
 /* PROJECTS */
 .proj-list { display: flex; flex-direction: column; gap: 1.25rem; margin-top: 2rem; }
-.pcard { background: #fff; border: 1px solid rgba(0,0,0,0.07); border-radius: 16px; padding: 2rem; display: grid; grid-template-columns: 1fr auto; gap: 1.5rem; align-items: start; text-decoration: none; color: inherit; transition: box-shadow 0.2s, transform 0.2s; }
-.pcard:hover { box-shadow: 0 8px 32px rgba(90,60,30,0.1); transform: translateY(-2px); }
+.pcard { background: #1c1c2e; border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 2rem; display: grid; grid-template-columns: 1fr auto; gap: 1.5rem; align-items: start; text-decoration: none; color: inherit; transition: box-shadow 0.2s, transform 0.2s; }
+.pcard:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.5); transform: translateY(-2px); }
 .p-num { font-size: 11px; font-style: italic; color: var(--text3); font-family: var(--serif); margin-bottom: 5px; }
 .p-title { font-family: var(--serif); font-size: 1.2rem; font-weight: 600; color: var(--text); margin-bottom: 8px; line-height: 1.3; }
 .p-desc { font-size: 13px; color: var(--text2); line-height: 1.7; margin-bottom: 1rem; font-weight: 300; max-width: 560px; }
 .p-chips { display: flex; flex-wrap: wrap; gap: 6px; }
 .chip { font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 20px; border: 1px solid; }
-.ct { background: var(--terra3); color: var(--terra); border-color: var(--terra2); }
-.cs { background: var(--sage2); color: #3d6b41; border-color: #a8d4ac; }
-.cg { background: var(--gold2); color: var(--gold); border-color: #e8c97a; }
-.p-arrow { width: 36px; height: 36px; border-radius: 50%; background: var(--cream2); border: 1px solid var(--cream3); display: flex; align-items: center; justify-content: center; font-size: 16px; color: var(--text3); transition: all 0.2s; flex-shrink: 0; }
+.ct { background: rgba(232,133,111,0.15); color: var(--terra); border-color: rgba(232,133,111,0.35); }
+.cs { background: rgba(122,158,126,0.15); color: #7fc485; border-color: rgba(122,158,126,0.35); }
+.cg { background: rgba(232,184,75,0.15); color: var(--gold); border-color: rgba(232,184,75,0.35); }
+.p-arrow { width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); display: flex; align-items: center; justify-content: center; font-size: 16px; color: var(--text3); transition: all 0.2s; flex-shrink: 0; }
 .pcard:hover .p-arrow { background: var(--terra); border-color: var(--terra); color: #fff; }
 
 /* EXPERIENCE */
 .exp-list { display: flex; flex-direction: column; margin-top: 2rem; }
-.exp-item { display: grid; grid-template-columns: 160px 1fr; gap: 2rem; padding: 2rem 0; border-bottom: 1px solid rgba(0,0,0,0.07); }
+.exp-item { display: grid; grid-template-columns: 160px 1fr; gap: 2rem; padding: 2rem 0; border-bottom: 1px solid rgba(255,255,255,0.07); }
 .exp-item:last-child { border-bottom: none; }
 .exp-period { font-size: 11px; font-weight: 700; color: var(--text3); letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 3px; }
 .exp-loc { font-size: 11px; color: var(--text3); margin-bottom: 8px; }
@@ -152,48 +152,48 @@ section { padding: 5rem 2.5rem; max-width: 1100px; margin: 0 auto; }
 .exp-pts li strong { color: var(--text); font-weight: 600; }
 
 /* EDUCATION */
-.edu-card { background: #fff; border: 1px solid rgba(0,0,0,0.07); border-radius: 20px; overflow: hidden; margin-top: 2rem; box-shadow: 0 2px 16px rgba(90,60,30,0.05); }
-.edu-top { background: linear-gradient(135deg, #fdf5eb, #faf0e8); border-bottom: 1px solid var(--cream3); padding: 2rem 2.5rem; display: grid; grid-template-columns: 1fr auto; gap: 1.5rem; align-items: center; }
+.edu-card { background: #1c1c2e; border: 1px solid rgba(255,255,255,0.08); border-radius: 20px; overflow: hidden; margin-top: 2rem; box-shadow: 0 2px 16px rgba(90,60,30,0.05); }
+.edu-top { background: linear-gradient(135deg, #1a1508, #141005); border-bottom: 1px solid rgba(255,255,255,0.08); padding: 2rem 2.5rem; display: grid; grid-template-columns: 1fr auto; gap: 1.5rem; align-items: center; }
 .edu-period { font-size: 11px; font-weight: 700; color: var(--text3); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 6px; }
 .edu-degree { font-family: var(--serif); font-size: 1.3rem; font-weight: 600; color: var(--text); margin-bottom: 4px; }
 .edu-school { font-size: 13px; font-weight: 500; color: var(--text2); }
 .edu-honors { display: flex; flex-direction: column; gap: 6px; }
 .hbadge { display: inline-flex; align-items: center; gap: 7px; padding: 7px 16px; border-radius: 8px; font-size: 12px; font-weight: 600; white-space: nowrap; }
-.hg { background: var(--gold2); color: var(--gold); border: 1px solid #e8c97a; }
-.hs { background: var(--sage2); color: #3d6b41; border: 1px solid #a8d4ac; }
+.hg { background: rgba(232,184,75,0.15); color: var(--gold); border: 1px solid rgba(232,184,75,0.35); }
+.hs { background: rgba(122,158,126,0.15); color: #7fc485; border: 1px solid rgba(122,158,126,0.35); }
 .edu-body { padding: 2rem 2.5rem; }
 .course-lbl { font-size: 11px; font-weight: 700; color: var(--text3); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 1rem; }
 .course-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 8px; }
-.course-item { display: flex; align-items: center; gap: 10px; padding: 10px 14px; background: #fdf8f2; border: 1px solid var(--cream3); border-radius: 8px; font-size: 12px; color: var(--text2); font-weight: 400; transition: all 0.15s; }
+.course-item { display: flex; align-items: center; gap: 10px; padding: 10px 14px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; font-size: 12px; color: var(--text2); font-weight: 400; transition: all 0.15s; }
 .course-item:hover { background: var(--terra3); border-color: var(--terra2); color: var(--terra); }
 .cn { font-size: 10px; font-weight: 700; color: var(--text3); min-width: 18px; }
 
 /* SKILLS */
 .sk-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 2rem; }
-.sk-card { background: #fff; border: 1px solid rgba(0,0,0,0.07); border-radius: 14px; padding: 1.5rem; transition: box-shadow 0.2s; }
-.sk-card:hover { box-shadow: 0 4px 18px rgba(90,60,30,0.07); }
+.sk-card { background: #1c1c2e; border: 1px solid rgba(255,255,255,0.08); border-radius: 14px; padding: 1.5rem; transition: box-shadow 0.2s; }
+.sk-card:hover { box-shadow: 0 4px 18px rgba(0,0,0,0.4); }
 .sk-icon { font-size: 22px; margin-bottom: 8px; }
 .sk-title { font-size: 13px; font-weight: 700; color: var(--text); margin-bottom: 10px; }
 .sk-tags { display: flex; flex-wrap: wrap; gap: 5px; }
-.stag { font-size: 11px; font-weight: 500; padding: 3px 9px; background: var(--purple2); border: 1px solid #d8c8f0; border-radius: 20px; color: #5a3d8a; }
+.stag { font-size: 11px; font-weight: 500; padding: 3px 9px; background: rgba(160,133,212,0.15); border: 1px solid rgba(160,133,212,0.3); border-radius: 20px; color: #c4a8f0; }
 .cert-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 1.25rem; }
-.cert { display: flex; align-items: center; gap: 7px; padding: 8px 14px; background: #fff; border: 1px solid rgba(0,0,0,0.09); border-radius: 8px; font-size: 12px; font-weight: 500; color: var(--text2); transition: all 0.15s; }
+.cert { display: flex; align-items: center; gap: 7px; padding: 8px 14px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; font-size: 12px; font-weight: 500; color: var(--text2); transition: all 0.15s; }
 .cert:hover { border-color: var(--terra); color: var(--terra); background: var(--terra3); }
 
 /* CONTACT */
 .contact-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; margin-top: 2rem; }
 .contact-intro p { font-size: 15px; color: var(--text2); font-weight: 300; line-height: 1.8; margin-bottom: 1rem; }
 .contact-intro strong { color: var(--text); font-weight: 600; }
-.auth-box { padding: 12px 16px; background: var(--sage2); border: 1px solid #a8d4ac; border-radius: 10px; font-size: 13px; color: #3d6b41; font-weight: 600; margin-top: 0.5rem; }
+.auth-box { padding: 12px 16px; background: rgba(122,158,126,0.15); border: 1px solid rgba(122,158,126,0.4); border-radius: 10px; font-size: 13px; color: #7fc485; font-weight: 600; margin-top: 0.5rem; }
 .contact-links { display: flex; flex-direction: column; gap: 10px; }
-.cl { display: flex; align-items: center; justify-content: space-between; padding: 14px 18px; background: #fff; border: 1px solid rgba(0,0,0,0.07); border-radius: 12px; text-decoration: none; transition: all 0.2s; }
+.cl { display: flex; align-items: center; justify-content: space-between; padding: 14px 18px; background: #1c1c2e; border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; text-decoration: none; transition: all 0.2s; }
 .cl:hover { border-color: var(--terra); box-shadow: 0 2px 12px rgba(196,97,74,0.1); }
 .cl-lbl { font-size: 11px; font-weight: 700; color: var(--text3); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 2px; }
 .cl-val { font-size: 13px; font-weight: 500; color: var(--text); }
 .cl-arr { color: var(--text3); font-size: 14px; transition: transform 0.2s; }
 .cl:hover .cl-arr { color: var(--terra); transform: translateX(3px); }
 
-footer { border-top: 1px solid var(--cream3); padding: 1.5rem 2.5rem; max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+footer { border-top: 1px solid rgba(255,255,255,0.07); padding: 1.5rem 2.5rem; max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
 footer p { font-size: 12px; color: var(--text3); }
 footer a { color: var(--terra); text-decoration: none; font-weight: 500; }
 footer a:hover { text-decoration: underline; }
@@ -225,7 +225,7 @@ footer a:hover { text-decoration: underline; }
 <body>
 
 <nav>
-  <a class="nav-logo" href="#">Sushma <span>B.</span></a>
+  <a class="nav-logo" href="#">Sushma <span>Bukkapuram</span></a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#projects">Projects</a></li>
@@ -239,9 +239,9 @@ footer a:hover { text-decoration: underline; }
 <div class="hero-wrap">
   <div class="hero">
     <div class="hero-left">
-      <div class="eyebrow-sm">Marketing Data Analyst</div>
-      <h1>Hi, I'm<br><em>Sushma</em> 👋</h1>
-      <p class="hero-bio">I love finding stories hidden inside data — and turning them into decisions that actually move the needle. With <strong>3+ years</strong> across B2B and B2C analytics, I work in SQL, Python, and Power BI to help teams understand their customers, improve campaigns, and grow revenue.</p>
+      <div class="eyebrow-sm">Available from July 2026 · Dallas, TX · Open to Relocation</div>
+      <h1>Marketing<br><em>Data Analyst</em></h1>
+      <p class="hero-bio">A results-driven <strong>Marketing Data Analyst</strong> with 3+ years of experience transforming complex datasets into actionable business insights. I specialize in SQL, Python, and Power BI — helping B2B and B2C teams optimize campaigns, understand customer behavior, and grow revenue through data.</p>
       <div class="auth-badge">Authorized to work in the US · No sponsorship required</div>
       <div class="ctas">
         <a class="btn btn-p" href="mailto:bukkapuramsushma01@gmail.com">Let's connect →</a>
@@ -260,9 +260,9 @@ footer a:hover { text-decoration: underline; }
       <div class="card-title">Marketing Data Analyst · Dallas, TX</div>
       <hr class="card-div">
       <div class="card-row"><span class="crl">Degree</span><span class="crv">MS Business Analytics & AI</span></div>
-      <div class="card-row"><span class="crl">University</span><span class="crv">UT Dallas (May 2026)</span></div>
+      <div class="card-row"><span class="crl">University</span><span class="crv">UT Dallas (July 2026)</span></div>
       <div class="card-row"><span class="crl">Location</span><span class="crv">Dallas, TX</span></div>
-      <div class="card-row"><span class="crl">Available</span><span class="crv g">May 2026</span></div>
+      <div class="card-row"><span class="crl">Available</span><span class="crv g">July 2026</span></div>
       <div class="card-row"><span class="crl">Work auth</span><span class="crv t">No sponsorship needed</span></div>
       <div class="badge badge-gold">★ Dean's Excellence Scholarship Awardee</div>
       <div class="badge badge-sage">◎ Scholar With Recognition — JSOM</div>
@@ -305,19 +305,8 @@ footer a:hover { text-decoration: underline; }
         </div>
       </div>
 
-      <!-- RIGHT: Academic highlights -->
+      <!-- RIGHT: Personality -->
       <div style="display:flex; flex-direction:column; gap:1.25rem;">
-        <div class="col-label">🎓 Academic Highlights</div>
-
-        <div class="acard edu-highlight">
-          <div class="acard-icon">🎓</div>
-          <div class="acard-title">M.S. Business Analytics & AI (STEM)</div>
-          <div class="acard-text"><strong>University of Texas at Dallas</strong> · Naveen Jindal School of Management<br>Aug 2024 — May 2026</div>
-          <div class="pills" style="margin-top:0.85rem;">
-            <span class="pill" style="background:var(--gold2);border-color:#e8c97a;color:var(--gold);">★ Dean's Excellence Scholarship</span>
-            <span class="pill" style="background:var(--sage2);border-color:#a8d4ac;color:#3d6b41;">◎ Scholar With Recognition</span>
-          </div>
-        </div>
 
         <div class="acard">
           <div class="acard-icon">⚡</div>
@@ -455,7 +444,7 @@ footer a:hover { text-decoration: underline; }
     <div class="edu-card">
       <div class="edu-top">
         <div>
-          <div class="edu-period">Aug 2024 — May 2026</div>
+          <div class="edu-period">Aug 2024 — July 2026</div>
           <div class="edu-degree">M.S. in Business Analytics & AI (STEM)</div>
           <div class="edu-school">The University of Texas at Dallas · Naveen Jindal School of Management</div>
         </div>
@@ -515,7 +504,7 @@ footer a:hover { text-decoration: underline; }
     <div class="contact-wrap">
       <div class="contact-intro">
         <p>I'm actively looking for full-time roles in <strong>marketing analytics, BI, and growth analytics</strong> across the US. I'm a quick learner, a team player, and someone who genuinely gets excited about data problems.</p>
-        <p>Available from <strong>May 2026</strong>. Whether you have a role in mind, want to collaborate, or just want to talk about marketing and data — my inbox is always open. 😊</p>
+        <p>Available from <strong>July 2026</strong>. Whether you have a role in mind, want to collaborate, or just want to talk about marketing and data — my inbox is always open. 😊</p>
         <div class="auth-box">✓ &nbsp;Authorized to work in the US — no visa sponsorship required</div>
       </div>
 
@@ -532,8 +521,8 @@ footer a:hover { text-decoration: underline; }
           <div><div class="cl-lbl">GitHub</div><div class="cl-val">github.com/sushma-bukkapuram</div></div>
           <span class="cl-arr">→</span>
         </a>
-        <a class="cl" href="https://sushma-bukkapuram.github.io" target="_blank">
-          <div><div class="cl-lbl">Portfolio website</div><div class="cl-val">sushma-bukkapuram.github.io</div></div>
+        <a class="cl" href="https://sushmabukkapuram.github.io/sushma-bukkapuram" target="_blank">
+          <div><div class="cl-lbl">Portfolio website</div><div class="cl-val">sushmabukkapuram.github.io/sushma-bukkapuram</div></div>
           <span class="cl-arr">→</span>
         </a>
         <div class="cl" style="cursor:default;">
@@ -547,7 +536,7 @@ footer a:hover { text-decoration: underline; }
 
 <footer>
   <p>© 2026 Sushma Bukkapuram · Made with curiosity ☕</p>
-  <p>Dallas, TX · Open to relocation · <a href="https://sushma-bukkapuram.github.io">sushma-bukkapuram.github.io</a></p>
+  <p>Dallas, TX · Open to relocation · <a href="https://sushmabukkapuram.github.io/sushma-bukkapuram">sushmabukkapuram.github.io/sushma-bukkapuram</a></p>
 </footer>
 
 </body>

@@ -19,7 +19,7 @@
   --purple: #a085d4; --purple2: #1e1530;
   --serif: 'Playfair Display', Georgia, serif;
   --body: 'Plus Jakarta Sans', system-ui, sans-serif;
-
+ 
   /* Section background colours — dark palette */
   --bg-hero:       #0f0f1a;
   --bg-about:      #0d1a12;   /* deep forest green */
@@ -31,7 +31,7 @@
 }
 html { scroll-behavior: smooth; }
 body { background: var(--bg-hero); color: var(--text); font-family: var(--body); font-weight: 400; line-height: 1.7; overflow-x: hidden; }
-
+ 
 /* NAV */
 nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
@@ -45,7 +45,7 @@ nav {
 .nav-links { display: flex; gap: 1.75rem; list-style: none; }
 .nav-links a { font-size: 13px; font-weight: 500; color: var(--text2); text-decoration: none; transition: color 0.2s; }
 .nav-links a:hover { color: var(--terra); }
-
+ 
 /* HERO */
 .hero-wrap { background: var(--bg-hero); }
 .hero {
@@ -59,14 +59,14 @@ nav {
   letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 1.25rem;
 }
 .eyebrow-sm::before { content: ''; display: inline-block; width: 20px; height: 2px; background: var(--terra); border-radius: 1px; }
-
+ 
 /* HEADING HIERARCHY */
 h1 { font-family: var(--serif); font-size: clamp(3rem, 6vw, 5rem); font-weight: 400; line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 1.25rem; }
 h1 em { font-style: italic; color: var(--terra); }
 h2 { font-family: var(--serif); font-size: clamp(2.4rem, 4vw, 3.4rem); font-weight: 400; line-height: 1.15; letter-spacing: -0.01em; margin-bottom: 0.4rem; }
 h3, .acard-title { font-family: var(--serif); font-size: 1.15rem; font-weight: 600; color: var(--text); margin-bottom: 0.5rem; }
 .sec-sub { font-size: 15px; color: var(--text2); font-weight: 300; margin-bottom: 2.5rem; max-width: 540px; line-height: 1.75; }
-
+ 
 .hero-bio { font-size: 16px; font-weight: 300; color: var(--text2); line-height: 1.8; max-width: 520px; margin-bottom: 1.5rem; }
 .hero-bio strong { color: var(--text); font-weight: 600; }
 .auth-badge { display: inline-flex; align-items: center; gap: 7px; padding: 7px 14px; background: rgba(122,158,126,0.15); border: 1px solid rgba(122,158,126,0.4); border-radius: 20px; font-size: 12px; font-weight: 600; color: #7fc485; margin-bottom: 2rem; }
@@ -80,7 +80,7 @@ h3, .acard-title { font-family: var(--serif); font-size: 1.15rem; font-weight: 6
 .hero-stats { display: flex; gap: 2rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); }
 .stat-n { font-family: var(--serif); font-size: 2rem; font-weight: 600; color: var(--text); line-height: 1; margin-bottom: 3px; }
 .stat-l { font-size: 11px; color: var(--text3); font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; }
-
+ 
 .hero-card { background: #1c1c2e; border: 1px solid var(--cream3); border-radius: 20px; padding: 2rem; box-shadow: 0 4px 32px rgba(90,60,30,0.08); }
 .avatar { width: 68px; height: 68px; border-radius: 50%; background: linear-gradient(135deg, #3d2420, #2a2010); display: flex; align-items: center; justify-content: center; font-family: var(--serif); font-size: 24px; font-weight: 600; color: var(--terra); margin-bottom: 1rem; border: 3px solid #2a2a3e; box-shadow: 0 2px 12px rgba(196,97,74,0.12); }
 .card-name { font-family: var(--serif); font-size: 17px; font-weight: 600; color: var(--text); margin-bottom: 2px; }
@@ -93,7 +93,7 @@ h3, .acard-title { font-family: var(--serif); font-size: 1.15rem; font-weight: 6
 .badge { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; border-radius: 8px; font-size: 11px; font-weight: 600; width: 100%; justify-content: center; margin-top: 8px; }
 .badge-gold { background: rgba(232,184,75,0.15); color: var(--gold); border: 1px solid rgba(232,184,75,0.35); }
 .badge-sage { background: rgba(122,158,126,0.15); color: #7fc485; border: 1px solid rgba(122,158,126,0.35); }
-
+ 
 /* SECTION WRAPPERS with distinct bg */
 .section-wrap { width: 100%; }
 .section-wrap.about-bg      { background: var(--bg-about); }
@@ -102,12 +102,12 @@ h3, .acard-title { font-family: var(--serif); font-size: 1.15rem; font-weight: 6
 .section-wrap.education-bg  { background: var(--bg-education); }
 .section-wrap.skills-bg     { background: var(--bg-skills); }
 .section-wrap.contact-bg    { background: var(--bg-contact); }
-
+ 
 section { padding: 5rem 2.5rem; max-width: 1100px; margin: 0 auto; }
 .divider { border: none; border-top: 1px solid rgba(255,255,255,0.07); }
 .eyebrow { font-size: 11px; font-weight: 700; color: var(--terra); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 0.6rem; display: flex; align-items: center; gap: 8px; }
 .eyebrow::after { content: ''; width: 36px; height: 1.5px; background: var(--terra3); border-radius: 1px; }
-
+ 
 /* ABOUT */
 .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.75rem; margin-top: 2rem; align-items: start; }
 .col-label { font-family: var(--serif); font-size: 13px; font-weight: 700; color: var(--terra); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.75rem; }
@@ -121,7 +121,7 @@ section { padding: 5rem 2.5rem; max-width: 1100px; margin: 0 auto; }
 .pills { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 1rem; }
 .pill { display: inline-flex; align-items: center; gap: 5px; padding: 5px 12px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 20px; font-size: 12px; font-weight: 500; color: var(--text2); transition: all 0.2s; }
 .pill:hover { background: var(--terra3); border-color: var(--terra2); color: var(--terra); }
-
+ 
 /* PROJECTS */
 .proj-list { display: flex; flex-direction: column; gap: 1.25rem; margin-top: 2rem; }
 .pcard { background: #1c1c2e; border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 2rem; display: grid; grid-template-columns: 1fr auto; gap: 1.5rem; align-items: start; text-decoration: none; color: inherit; transition: box-shadow 0.2s, transform 0.2s; }
@@ -136,7 +136,7 @@ section { padding: 5rem 2.5rem; max-width: 1100px; margin: 0 auto; }
 .cg { background: rgba(232,184,75,0.15); color: var(--gold); border-color: rgba(232,184,75,0.35); }
 .p-arrow { width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); display: flex; align-items: center; justify-content: center; font-size: 16px; color: var(--text3); transition: all 0.2s; flex-shrink: 0; }
 .pcard:hover .p-arrow { background: var(--terra); border-color: var(--terra); color: #fff; }
-
+ 
 /* EXPERIENCE */
 .exp-list { display: flex; flex-direction: column; margin-top: 2rem; }
 .exp-item { display: grid; grid-template-columns: 160px 1fr; gap: 2rem; padding: 2rem 0; border-bottom: 1px solid rgba(255,255,255,0.07); }
@@ -150,7 +150,7 @@ section { padding: 5rem 2.5rem; max-width: 1100px; margin: 0 auto; }
 .exp-pts li { font-size: 13px; color: var(--text2); line-height: 1.65; padding-left: 16px; position: relative; font-weight: 300; }
 .exp-pts li::before { content: '·'; position: absolute; left: 4px; color: var(--terra); font-size: 18px; line-height: 1.2; }
 .exp-pts li strong { color: var(--text); font-weight: 600; }
-
+ 
 /* EDUCATION */
 .edu-card { background: #1c1c2e; border: 1px solid rgba(255,255,255,0.08); border-radius: 20px; overflow: hidden; margin-top: 2rem; box-shadow: 0 2px 16px rgba(90,60,30,0.05); }
 .edu-top { background: linear-gradient(135deg, #1a1508, #141005); border-bottom: 1px solid rgba(255,255,255,0.08); padding: 2rem 2.5rem; display: grid; grid-template-columns: 1fr auto; gap: 1.5rem; align-items: center; }
@@ -167,7 +167,7 @@ section { padding: 5rem 2.5rem; max-width: 1100px; margin: 0 auto; }
 .course-item { display: flex; align-items: center; gap: 10px; padding: 10px 14px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; font-size: 12px; color: var(--text2); font-weight: 400; transition: all 0.15s; }
 .course-item:hover { background: var(--terra3); border-color: var(--terra2); color: var(--terra); }
 .cn { font-size: 10px; font-weight: 700; color: var(--text3); min-width: 18px; }
-
+ 
 /* SKILLS */
 .sk-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 2rem; }
 .sk-card { background: #1c1c2e; border: 1px solid rgba(255,255,255,0.08); border-radius: 14px; padding: 1.5rem; transition: box-shadow 0.2s; }
@@ -179,7 +179,7 @@ section { padding: 5rem 2.5rem; max-width: 1100px; margin: 0 auto; }
 .cert-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 1.25rem; }
 .cert { display: flex; align-items: center; gap: 7px; padding: 8px 14px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; font-size: 12px; font-weight: 500; color: var(--text2); transition: all 0.15s; }
 .cert:hover { border-color: var(--terra); color: var(--terra); background: var(--terra3); }
-
+ 
 /* CONTACT */
 .contact-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; margin-top: 2rem; }
 .contact-intro p { font-size: 15px; color: var(--text2); font-weight: 300; line-height: 1.8; margin-bottom: 1rem; }
@@ -192,12 +192,12 @@ section { padding: 5rem 2.5rem; max-width: 1100px; margin: 0 auto; }
 .cl-val { font-size: 13px; font-weight: 500; color: var(--text); }
 .cl-arr { color: var(--text3); font-size: 14px; transition: transform 0.2s; }
 .cl:hover .cl-arr { color: var(--terra); transform: translateX(3px); }
-
+ 
 footer { border-top: 1px solid rgba(255,255,255,0.07); padding: 1.5rem 2.5rem; max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
 footer p { font-size: 12px; color: var(--text3); }
 footer a { color: var(--terra); text-decoration: none; font-weight: 500; }
 footer a:hover { text-decoration: underline; }
-
+ 
 @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 .hero-left > * { animation: fadeUp 0.6s ease both; }
 .hero-left > *:nth-child(1) { animation-delay: 0.05s; }
@@ -207,7 +207,7 @@ footer a:hover { text-decoration: underline; }
 .hero-left > *:nth-child(5) { animation-delay: 0.34s; }
 .hero-left > *:nth-child(6) { animation-delay: 0.41s; }
 .hero-card { animation: fadeUp 0.7s ease 0.2s both; }
-
+ 
 @media (max-width: 768px) {
   .hero { grid-template-columns: 1fr; padding: 7rem 1.25rem 3rem; }
   .hero-card { display: none; }
@@ -223,7 +223,7 @@ footer a:hover { text-decoration: underline; }
 </style>
 </head>
 <body>
-
+ 
 <nav>
   <a class="nav-logo" href="#">Sushma <span>Bukkapuram</span></a>
   <ul class="nav-links">
@@ -234,7 +234,7 @@ footer a:hover { text-decoration: underline; }
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
-
+ 
 <!-- HERO -->
 <div class="hero-wrap">
   <div class="hero">
@@ -253,7 +253,7 @@ footer a:hover { text-decoration: underline; }
         <div><div class="stat-n">20+</div><div class="stat-l">Dashboards built</div></div>
       </div>
     </div>
-
+ 
     <div class="hero-card">
       <div class="avatar">SB</div>
       <div class="card-name">Sushma Bukkapuram</div>
@@ -269,19 +269,19 @@ footer a:hover { text-decoration: underline; }
     </div>
   </div>
 </div>
-
+ 
 <!-- ABOUT — soft sage green bg -->
 <div class="section-wrap about-bg">
   <section id="about">
     <div class="eyebrow">About me</div>
     <h2>More than just<br>a spreadsheet person</h2>
     <p class="sec-sub">I'm someone who loves both the analytical and creative sides of marketing. Data tells you what happened — creativity helps you figure out what to do next.</p>
-
+ 
     <div class="about-grid">
       <!-- LEFT: Extracurricular -->
       <div style="display:flex; flex-direction:column; gap:1.25rem;">
         <div class="col-label">🎭 Extracurricular</div>
-
+ 
         <div class="acard insta">
           <div class="acard-icon">📱</div>
           <div class="acard-title">Content Creator on Instagram</div>
@@ -292,7 +292,7 @@ footer a:hover { text-decoration: underline; }
             <span class="pill">📈 Engagement tracking</span>
           </div>
         </div>
-
+ 
         <div class="acard">
           <div class="acard-icon">🎤</div>
           <div class="acard-title">Performing Arts & Creative Pursuits</div>
@@ -304,10 +304,10 @@ footer a:hover { text-decoration: underline; }
           </div>
         </div>
       </div>
-
+ 
       <!-- RIGHT: Personality -->
       <div style="display:flex; flex-direction:column; gap:1.25rem;">
-
+ 
         <div class="acard">
           <div class="acard-icon">⚡</div>
           <div class="acard-title">Always present, always engaged</div>
@@ -322,14 +322,14 @@ footer a:hover { text-decoration: underline; }
     </div>
   </section>
 </div>
-
+ 
 <!-- PROJECTS — cream bg -->
 <div class="section-wrap projects-bg">
   <section id="projects">
     <div class="eyebrow">Projects</div>
     <h2>Things I've built<br>and what they proved</h2>
     <p class="sec-sub">Three projects that show how I think — from raw, messy data to a real business decision.</p>
-
+ 
     <div class="proj-list">
       <a class="pcard" href="https://github.com/SushmaBukkapuram/cross-channel-marketing-dashboard" target="_blank">
         <div>
@@ -342,7 +342,7 @@ footer a:hover { text-decoration: underline; }
         </div>
         <div class="p-arrow">↗</div>
       </a>
-
+ 
       <a class="pcard" href="https://github.com/SushmaBukkapuram/rfm-customer-segmentation" target="_blank">
         <div>
           <div class="p-num">Project 02</div>
@@ -354,7 +354,7 @@ footer a:hover { text-decoration: underline; }
         </div>
         <div class="p-arrow">↗</div>
       </a>
-
+ 
       <a class="pcard" href="https://github.com/SushmaBukkapuram/ab-testing-email-framework" target="_blank">
         <div>
           <div class="p-num">Project 03</div>
@@ -369,13 +369,13 @@ footer a:hover { text-decoration: underline; }
     </div>
   </section>
 </div>
-
+ 
 <!-- EXPERIENCE — soft blue bg -->
 <div class="section-wrap experience-bg">
   <section id="experience">
     <div class="eyebrow">Experience</div>
     <h2>Where I've grown<br>and what I've delivered</h2>
-
+ 
     <div class="exp-list">
       <div class="exp-item">
         <div>
@@ -394,7 +394,7 @@ footer a:hover { text-decoration: underline; }
           </ul>
         </div>
       </div>
-
+ 
       <div class="exp-item">
         <div>
           <div class="exp-period">Jan 2022 – Jun 2024</div>
@@ -413,7 +413,7 @@ footer a:hover { text-decoration: underline; }
           </ul>
         </div>
       </div>
-
+ 
       <div class="exp-item">
         <div>
           <div class="exp-period">Apr 2021 – Sep 2021</div>
@@ -434,13 +434,13 @@ footer a:hover { text-decoration: underline; }
     </div>
   </section>
 </div>
-
+ 
 <!-- EDUCATION — warm amber bg -->
 <div class="section-wrap education-bg">
   <section id="education">
     <div class="eyebrow">Education</div>
     <h2>Rigorous academics<br>with real recognition</h2>
-
+ 
     <div class="edu-card">
       <div class="edu-top">
         <div>
@@ -471,13 +471,13 @@ footer a:hover { text-decoration: underline; }
     </div>
   </section>
 </div>
-
+ 
 <!-- SKILLS — soft lavender bg -->
 <div class="section-wrap skills-bg">
   <section id="skills">
     <div class="eyebrow">Skills</div>
     <h2>The tools I<br>work with daily</h2>
-
+ 
     <div class="sk-grid">
       <div class="sk-card"><div class="sk-icon">🗃️</div><div class="sk-title">Data & Databases</div><div class="sk-tags"><span class="stag">SQL</span><span class="stag">PostgreSQL</span><span class="stag">MySQL</span><span class="stag">SAP HANA</span><span class="stag">Power Query</span></div></div>
       <div class="sk-card"><div class="sk-icon">🐍</div><div class="sk-title">Programming</div><div class="sk-tags"><span class="stag">Python</span><span class="stag">Pandas</span><span class="stag">NumPy</span><span class="stag">Matplotlib</span><span class="stag">Seaborn</span><span class="stag">R</span></div></div>
@@ -486,7 +486,7 @@ footer a:hover { text-decoration: underline; }
       <div class="sk-card"><div class="sk-icon">📣</div><div class="sk-title">Marketing Platforms</div><div class="sk-tags"><span class="stag">Google Analytics 4</span><span class="stag">Meta Ads</span><span class="stag">HubSpot</span><span class="stag">Salesforce</span><span class="stag">Marketo</span></div></div>
       <div class="sk-card"><div class="sk-icon">🤝</div><div class="sk-title">Collaboration</div><div class="sk-tags"><span class="stag">Jira</span><span class="stag">Agile</span><span class="stag">Asana</span><span class="stag">Confluence</span><span class="stag">Lucidchart</span></div></div>
     </div>
-
+ 
     <div class="cert-row">
       <div class="cert"><span>☁️</span> Salesforce Certified Platform Administrator</div>
       <div class="cert"><span>🔷</span> Microsoft Transact-SQL</div>
@@ -494,20 +494,20 @@ footer a:hover { text-decoration: underline; }
     </div>
   </section>
 </div>
-
+ 
 <!-- CONTACT — mint bg -->
 <div class="section-wrap contact-bg">
   <section id="contact">
     <div class="eyebrow">Contact</div>
     <h2>Let's build something<br>great together</h2>
-
+ 
     <div class="contact-wrap">
       <div class="contact-intro">
         <p>I'm actively looking for full-time roles in <strong>marketing analytics, BI, and growth analytics</strong> across the US. I'm a quick learner, a team player, and someone who genuinely gets excited about data problems.</p>
         <p>Available from <strong>July 2026</strong>. Whether you have a role in mind, want to collaborate, or just want to talk about marketing and data — my inbox is always open. 😊</p>
         <div class="auth-box">✓ &nbsp;Authorized to work in the US — no visa sponsorship required</div>
       </div>
-
+ 
       <div class="contact-links">
         <a class="cl" href="mailto:bukkapuramsushma01@gmail.com">
           <div><div class="cl-lbl">Email</div><div class="cl-val">bukkapuramsushma01@gmail.com</div></div>
@@ -533,12 +533,12 @@ footer a:hover { text-decoration: underline; }
     </div>
   </section>
 </div>
-
+ 
 <footer>
   <p>© 2026 Sushma Bukkapuram · Made with curiosity ☕</p>
   <p>Dallas, TX · Open to relocation · <a href="https://sushmabukkapuram.github.io/sushma-bukkapuram">sushmabukkapuram.github.io/sushma-bukkapuram</a></p>
 </footer>
-
+ 
 </body>
 </html>
 

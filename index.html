@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sushma Bukkapuram — Marketing Data Analyst</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --cream: #faf7f2; --cream2: #f3ede3; --cream3: #e8ddd0;
+  --text: #2a1f14; --text2: #6b5a48; --text3: #a8978a;
+  --terra: #c4614a; --terra2: #e8856f; --terra3: #f5d5ce;
+  --sage: #7a9e7e; --sage2: #d4e8d6;
+  --gold: #c9921a; --gold2: #f5e6c8;
+  --serif: 'Playfair Display', Georgia, serif;
+  --body: 'Plus Jakarta Sans', system-ui, sans-serif;
+}
+html { scroll-behavior: smooth; }
+body { background: var(--cream); color: var(--text); font-family: var(--body); font-weight: 400; line-height: 1.7; overflow-x: hidden; }
+
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1rem 2.5rem;
+  background: rgba(250,247,242,0.93); backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--cream3);
+}
+.nav-logo { font-family: var(--serif); font-size: 17px; font-weight: 600; color: var(--text); text-decoration: none; }
+.nav-logo span { color: var(--terra); font-style: italic; }
+.nav-links { display: flex; gap: 1.75rem; list-style: none; }
+.nav-links a { font-size: 13px; font-weight: 500; color: var(--text2); text-decoration: none; transition: color 0.2s; }
+.nav-links a:hover { color: var(--terra); }
+
+.hero {
+  min-height: 100vh; display: grid; grid-template-columns: 1fr 360px;
+  gap: 4rem; align-items: center; padding: 8rem 2.5rem 4rem;
+  max-width: 1100px; margin: 0 auto;
+}
+.eyebrow-sm {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 12px; font-weight: 700; color: var(--terra);
+  letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 1.25rem;
+}
+.eyebrow-sm::before { content: ''; display: inline-block; width: 20px; height: 2px; background: var(--terra); border-radius: 1px; }
+h1 { font-family: var(--serif); font-size: clamp(2.8rem, 6vw, 5rem); font-weight: 400; line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 1.25rem; }
+h1 em { font-style: italic; color: var(--terra); }
+.hero-bio { font-size: 16px; font-weight: 300; color: var(--text2); line-height: 1.8; max-width: 520px; margin-bottom: 1.5rem; }
+.hero-bio strong { color: var(--text); font-weight: 600; }
+.auth-badge { display: inline-flex; align-items: center; gap: 7px; padding: 7px 14px; background: var(--sage2); border: 1px solid var(--sage); border-radius: 20px; font-size: 12px; font-weight: 600; color: #3d6b41; margin-bottom: 2rem; }
+.auth-badge::before { content: '✓'; }
+.ctas { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 3rem; }
+.btn { display: inline-flex; align-items: center; gap: 7px; padding: 0.7rem 1.4rem; font-size: 14px; font-weight: 500; font-family: var(--body); border-radius: 7px; text-decoration: none; transition: all 0.2s; cursor: pointer; border: none; }
+.btn-p { background: var(--terra); color: #fff; }
+.btn-p:hover { background: #b05540; transform: translateY(-1px); box-shadow: 0 4px 14px rgba(196,97,74,0.3); }
+.btn-o { background: transparent; color: var(--text); border: 1.5px solid var(--cream3); }
+.btn-o:hover { border-color: var(--text3); background: var(--cream2); }
+.hero-stats { display: flex; gap: 2rem; padding-top: 2rem; border-top: 1px solid var(--cream3); }
+.stat-n { font-family: var(--serif); font-size: 2rem; font-weight: 600; color: var(--text); line-height: 1; margin-bottom: 3px; }
+.stat-l { font-size: 11px; color: var(--text3); font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; }
+
+.hero-card { background: #fff; border: 1px solid var(--cream3); border-radius: 20px; padding: 2rem; box-shadow: 0 4px 32px rgba(90,60,30,0.08); }
+.avatar { width: 68px; height: 68px; border-radius: 50%; background: linear-gradient(135deg, var(--terra3), var(--gold2)); display: flex; align-items: center; justify-content: center; font-family: var(--serif); font-size: 24px; font-weight: 600; color: var(--terra); margin-bottom: 1rem; border: 3px solid #fff; box-shadow: 0 2px 12px rgba(196,97,74,0.12); }
+.card-name { font-family: var(--serif); font-size: 17px; font-weight: 600; color: var(--text); margin-bottom: 2px; }
+.card-title { font-size: 12px; color: var(--text3); margin-bottom: 1.25rem; font-weight: 500; }
+.card-div { border: none; border-top: 1px solid var(--cream3); margin: 1rem 0; }
+.card-row { display: flex; align-items: center; justify-content: space-between; padding: 5px 0; }
+.crl { font-size: 12px; color: var(--text3); font-weight: 500; }
+.crv { font-size: 12px; color: var(--text); font-weight: 500; }
+.crv.g { color: var(--sage); } .crv.t { color: var(--terra); }
+.badge { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; border-radius: 8px; font-size: 11px; font-weight: 600; width: 100%; justify-content: center; margin-top: 8px; }
+.badge-gold { background: var(--gold2); color: var(--gold); border: 1px solid #e8c97a; }
+.badge-sage { background: var(--sage2); color: #3d6b41; border: 1px solid #a8d4ac; }
+
+section { padding: 5rem 2.5rem; max-width: 1100px; margin: 0 auto; }
+.divider { border: none; border-top: 1px solid var(--cream3); }
+.eyebrow { font-size: 11px; font-weight: 700; color: var(--terra); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 0.6rem; display: flex; align-items: center; gap: 8px; }
+.eyebrow::after { content: ''; width: 36px; height: 1.5px; background: var(--terra3); border-radius: 1px; }
+h2 { font-family: var(--serif); font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 400; line-height: 1.15; letter-spacing: -0.01em; margin-bottom: 0.4rem; }
+.sec-sub { font-size: 15px; color: var(--text2); font-weight: 300; margin-bottom: 2.5rem; max-width: 540px; line-height: 1.75; }
+
+/* ABOUT */
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-top: 2rem; }
+.acard { background: #fff; border: 1px solid var(--cream3); border-radius: 16px; padding: 1.75rem; transition: box-shadow 0.2s; }
+.acard:hover { box-shadow: 0 4px 20px rgba(90,60,30,0.07); }
+.acard.wide { grid-column: 1 / -1; }
+.acard.insta { background: linear-gradient(135deg, #fdf5f0, #fff8f5); border-color: #f5cec8; }
+.acard-icon { font-size: 28px; margin-bottom: 0.75rem; }
+.acard-title { font-family: var(--serif); font-size: 18px; font-weight: 600; color: var(--text); margin-bottom: 0.5rem; }
+.acard-text { font-size: 14px; color: var(--text2); line-height: 1.8; font-weight: 300; }
+.acard-text strong { color: var(--text); font-weight: 600; }
+.pills { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 1rem; }
+.pill { display: inline-flex; align-items: center; gap: 5px; padding: 5px 12px; background: var(--cream2); border: 1px solid var(--cream3); border-radius: 20px; font-size: 12px; font-weight: 500; color: var(--text2); transition: all 0.2s; }
+.pill:hover { background: var(--terra3); border-color: var(--terra2); color: var(--terra); }
+
+/* PROJECTS */
+.proj-list { display: flex; flex-direction: column; gap: 1.25rem; margin-top: 2rem; }
+.pcard { background: #fff; border: 1px solid var(--cream3); border-radius: 16px; padding: 2rem; display: grid; grid-template-columns: 1fr auto; gap: 1.5rem; align-items: start; text-decoration: none; color: inherit; transition: box-shadow 0.2s, transform 0.2s; }
+.pcard:hover { box-shadow: 0 8px 32px rgba(90,60,30,0.1); transform: translateY(-2px); }
+.p-num { font-size: 11px; font-style: italic; color: var(--text3); font-family: var(--serif); margin-bottom: 5px; }
+.p-title { font-family: var(--serif); font-size: 19px; font-weight: 600; color: var(--text); margin-bottom: 8px; line-height: 1.3; }
+.p-desc { font-size: 13px; color: var(--text2); line-height: 1.7; margin-bottom: 1rem; font-weight: 300; max-width: 560px; }
+.p-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip { font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 20px; border: 1px solid; }
+.ct { background: var(--terra3); color: var(--terra); border-color: var(--terra2); }
+.cs { background: var(--sage2); color: #3d6b41; border-color: #a8d4ac; }
+.cg { background: var(--gold2); color: var(--gold); border-color: #e8c97a; }
+.p-arrow { width: 36px; height: 36px; border-radius: 50%; background: var(--cream2); border: 1px solid var(--cream3); display: flex; align-items: center; justify-content: center; font-size: 16px; color: var(--text3); transition: all 0.2s; flex-shrink: 0; }
+.pcard:hover .p-arrow { background: var(--terra); border-color: var(--terra); color: #fff; }
+
+/* EXPERIENCE */
+.exp-list { display: flex; flex-direction: column; margin-top: 2rem; }
+.exp-item { display: grid; grid-template-columns: 160px 1fr; gap: 2rem; padding: 2rem 0; border-bottom: 1px solid var(--cream3); }
+.exp-item:last-child { border-bottom: none; }
+.exp-period { font-size: 11px; font-weight: 700; color: var(--text3); letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 3px; }
+.exp-loc { font-size: 11px; color: var(--text3); margin-bottom: 8px; }
+.exp-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--terra); }
+.exp-role { font-family: var(--serif); font-size: 17px; font-weight: 600; color: var(--text); margin-bottom: 3px; }
+.exp-co { font-size: 13px; font-weight: 600; color: var(--terra); margin-bottom: 12px; }
+.exp-pts { list-style: none; display: flex; flex-direction: column; gap: 5px; }
+.exp-pts li { font-size: 13px; color: var(--text2); line-height: 1.65; padding-left: 16px; position: relative; font-weight: 300; }
+.exp-pts li::before { content: '·'; position: absolute; left: 4px; color: var(--terra); font-size: 18px; line-height: 1.2; }
+.exp-pts li strong { color: var(--text); font-weight: 600; }
+
+/* EDUCATION */
+.edu-card { background: #fff; border: 1px solid var(--cream3); border-radius: 20px; overflow: hidden; margin-top: 2rem; box-shadow: 0 2px 16px rgba(90,60,30,0.05); }
+.edu-top { background: linear-gradient(135deg, #fdf5eb, #faf0e8); border-bottom: 1px solid var(--cream3); padding: 2rem 2.5rem; display: grid; grid-template-columns: 1fr auto; gap: 1.5rem; align-items: center; }
+.edu-period { font-size: 11px; font-weight: 700; color: var(--text3); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 6px; }
+.edu-degree { font-family: var(--serif); font-size: 20px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
+.edu-school { font-size: 13px; font-weight: 500; color: var(--text2); }
+.edu-honors { display: flex; flex-direction: column; gap: 6px; }
+.hbadge { display: inline-flex; align-items: center; gap: 7px; padding: 7px 16px; border-radius: 8px; font-size: 12px; font-weight: 600; white-space: nowrap; }
+.hg { background: var(--gold2); color: var(--gold); border: 1px solid #e8c97a; }
+.hs { background: var(--sage2); color: #3d6b41; border: 1px solid #a8d4ac; }
+.edu-body { padding: 2rem 2.5rem; }
+.course-lbl { font-size: 11px; font-weight: 700; color: var(--text3); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 1rem; }
+.course-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 8px; }
+.course-item { display: flex; align-items: center; gap: 10px; padding: 10px 14px; background: var(--cream); border: 1px solid var(--cream3); border-radius: 8px; font-size: 12px; color: var(--text2); font-weight: 400; transition: all 0.15s; }
+.course-item:hover { background: var(--terra3); border-color: var(--terra2); color: var(--terra); }
+.cn { font-size: 10px; font-weight: 700; color: var(--text3); min-width: 18px; }
+
+/* SKILLS */
+.sk-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 2rem; }
+.sk-card { background: #fff; border: 1px solid var(--cream3); border-radius: 14px; padding: 1.5rem; transition: box-shadow 0.2s; }
+.sk-card:hover { box-shadow: 0 4px 18px rgba(90,60,30,0.07); }
+.sk-icon { font-size: 22px; margin-bottom: 8px; }
+.sk-title { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 10px; }
+.sk-tags { display: flex; flex-wrap: wrap; gap: 5px; }
+.stag { font-size: 11px; font-weight: 500; padding: 3px 9px; background: var(--cream2); border: 1px solid var(--cream3); border-radius: 20px; color: var(--text2); }
+.cert-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 1.25rem; }
+.cert { display: flex; align-items: center; gap: 7px; padding: 8px 14px; background: #fff; border: 1px solid var(--cream3); border-radius: 8px; font-size: 12px; font-weight: 500; color: var(--text2); transition: all 0.15s; }
+.cert:hover { border-color: var(--terra); color: var(--terra); background: var(--terra3); }
+
+/* CONTACT */
+.contact-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; margin-top: 2rem; }
+.contact-intro p { font-size: 15px; color: var(--text2); font-weight: 300; line-height: 1.8; margin-bottom: 1rem; }
+.contact-intro strong { color: var(--text); font-weight: 600; }
+.auth-box { padding: 12px 16px; background: var(--sage2); border: 1px solid #a8d4ac; border-radius: 10px; font-size: 13px; color: #3d6b41; font-weight: 600; margin-top: 0.5rem; }
+.contact-links { display: flex; flex-direction: column; gap: 10px; }
+.cl { display: flex; align-items: center; justify-content: space-between; padding: 14px 18px; background: #fff; border: 1px solid var(--cream3); border-radius: 12px; text-decoration: none; transition: all 0.2s; }
+.cl:hover { border-color: var(--terra); box-shadow: 0 2px 12px rgba(196,97,74,0.1); }
+.cl-lbl { font-size: 11px; font-weight: 700; color: var(--text3); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 2px; }
+.cl-val { font-size: 13px; font-weight: 500; color: var(--text); }
+.cl-arr { color: var(--text3); font-size: 14px; transition: transform 0.2s; }
+.cl:hover .cl-arr { color: var(--terra); transform: translateX(3px); }
+
+footer { border-top: 1px solid var(--cream3); padding: 1.5rem 2.5rem; max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+footer p { font-size: 12px; color: var(--text3); }
+footer a { color: var(--terra); text-decoration: none; font-weight: 500; }
+footer a:hover { text-decoration: underline; }
+
+@keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+.hero-left > * { animation: fadeUp 0.6s ease both; }
+.hero-left > *:nth-child(1) { animation-delay: 0.05s; }
+.hero-left > *:nth-child(2) { animation-delay: 0.12s; }
+.hero-left > *:nth-child(3) { animation-delay: 0.2s; }
+.hero-left > *:nth-child(4) { animation-delay: 0.27s; }
+.hero-left > *:nth-child(5) { animation-delay: 0.34s; }
+.hero-left > *:nth-child(6) { animation-delay: 0.41s; }
+.hero-card { animation: fadeUp 0.7s ease 0.2s both; }
+
+@media (max-width: 768px) {
+  .hero { grid-template-columns: 1fr; padding: 7rem 1.25rem 3rem; }
+  .hero-card { display: none; }
+  section { padding: 3.5rem 1.25rem; }
+  nav { padding: 1rem 1.25rem; }
+  .nav-links li:nth-child(n+4) { display: none; }
+  .about-grid, .sk-grid { grid-template-columns: 1fr; }
+  .about-grid .acard.wide { grid-column: 1; }
+  .exp-item { grid-template-columns: 1fr; gap: 0.5rem; }
+  .edu-top { grid-template-columns: 1fr; }
+  .contact-wrap { grid-template-columns: 1fr; }
+  footer { flex-direction: column; gap: 0.5rem; text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="#">Sushma <span>B.</span></a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="hero">
+  <div class="hero-left">
+    <div class="eyebrow-sm">Marketing Data Analyst</div>
+    <h1>Hi, I'm<br><em>Sushma</em> 👋</h1>
+    <p class="hero-bio">I love finding stories hidden inside data — and turning them into decisions that actually move the needle. With <strong>3+ years</strong> across B2B and B2C analytics, I work in SQL, Python, and Power BI to help teams understand their customers, improve campaigns, and grow revenue.</p>
+    <div class="auth-badge">Authorized to work in the US · No sponsorship required</div>
+    <div class="ctas">
+      <a class="btn btn-p" href="mailto:bukkapuramsushma01@gmail.com">Let's connect →</a>
+      <a class="btn btn-o" href="#projects">See my work</a>
+    </div>
+    <div class="hero-stats">
+      <div><div class="stat-n">3+</div><div class="stat-l">Years exp.</div></div>
+      <div><div class="stat-n">14%</div><div class="stat-l">Avg. conversion lift</div></div>
+      <div><div class="stat-n">20+</div><div class="stat-l">Dashboards built</div></div>
+    </div>
+  </div>
+
+  <div class="hero-card">
+    <div class="avatar">SB</div>
+    <div class="card-name">Sushma Bukkapuram</div>
+    <div class="card-title">Marketing Data Analyst · Dallas, TX</div>
+    <hr class="card-div">
+    <div class="card-row"><span class="crl">Degree</span><span class="crv">MS Business Analytics & AI</span></div>
+    <div class="card-row"><span class="crl">University</span><span class="crv">UT Dallas (May 2026)</span></div>
+    <div class="card-row"><span class="crl">Location</span><span class="crv">Dallas, TX</span></div>
+    <div class="card-row"><span class="crl">Available</span><span class="crv g">May 2026</span></div>
+    <div class="card-row"><span class="crl">Work auth</span><span class="crv t">No sponsorship needed</span></div>
+    <div class="badge badge-gold">★ Dean's Excellence Scholarship Awardee</div>
+    <div class="badge badge-sage">◎ Scholar With Recognition — JSOM</div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<section id="about">
+  <div class="eyebrow">About me</div>
+  <h2>More than just<br>a spreadsheet person</h2>
+  <p class="sec-sub">I'm someone who loves both the analytical and creative sides of marketing. Data tells you what happened — creativity helps you figure out what to do next.</p>
+
+  <div class="about-grid">
+    <div class="acard insta">
+      <div class="acard-icon">📱</div>
+      <div class="acard-title">I create content on Instagram</div>
+      <div class="acard-text">Outside of academics and work, I actively create content on Instagram — and it's not just for fun. It genuinely helps me <strong>understand marketing strategies from the inside</strong>. Managing content, watching what performs, analyzing engagement patterns, experimenting with captions and posting times — it's real, hands-on experience that no classroom fully replicates.<br><br>What looks like a reel idea is actually a mini A/B test. What seems like a trend is a shift in audience behavior. That curiosity is what also drives me as an analyst.</div>
+      <div class="pills">
+        <span class="pill">📊 Organic reach analysis</span>
+        <span class="pill">🎯 Content strategy</span>
+        <span class="pill">📈 Engagement tracking</span>
+      </div>
+    </div>
+
+    <div class="acard">
+      <div class="acard-icon">🎤</div>
+      <div class="acard-title">Creative at heart</div>
+      <div class="acard-text">I sing and dance — and creativity makes me a <strong>better analyst, not a distracted one</strong>. Performing teaches you how to read a room, communicate with confidence, and make something complex feel accessible. Those are exactly the skills I use when presenting data insights to non-technical teams and leadership.</div>
+      <div class="pills">
+        <span class="pill">🎵 Singing</span>
+        <span class="pill">💃 Dancing</span>
+        <span class="pill">🎨 Creative storytelling</span>
+      </div>
+    </div>
+
+    <div class="acard wide">
+      <div class="acard-icon">⚡</div>
+      <div class="acard-title">Interactive, energetic, and always present</div>
+      <div class="acard-text">I don't do well sitting quietly in a corner. I ask questions, push for clarity, and volunteer for things I haven't done before. Whether it's a team meeting, a project sprint, or a casual networking event — I show up fully. My colleagues at Intellipaat and PepsiCo would tell you I'm the kind of person who makes a group better just by being present and engaged. I was recognized as <strong>Community Champion at PepsiCo</strong> for exactly this reason.</div>
+      <div class="pills">
+        <span class="pill">🙋 Always asks questions</span>
+        <span class="pill">🤝 Natural collaborator</span>
+        <span class="pill">🏆 Community Champion — PepsiCo</span>
+        <span class="pill">🌱 Continuous learner</span>
+        <span class="pill">🎯 Goal-oriented</span>
+        <span class="pill">💡 Proactive problem-solver</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<section id="projects">
+  <div class="eyebrow">Projects</div>
+  <h2>Things I've built<br>and what they proved</h2>
+  <p class="sec-sub">Three projects that show how I think — from raw, messy data to a real business decision.</p>
+
+  <div class="proj-list">
+    <a class="pcard" href="https://github.com/sushma-bukkapuram/cross-channel-marketing-dashboard" target="_blank">
+      <div>
+        <div class="p-num">Project 01</div>
+        <div class="p-title">Cross-Channel Marketing Analytics Dashboard</div>
+        <div class="p-desc">Unified Facebook, Google Ads, and TikTok data into PostgreSQL. Built SQL views to calculate CTR, CPA, and ROAS per channel, then visualized everything in Power BI. Found that one channel was consuming 31% of budget while driving only 8% of conversions.</div>
+        <div class="p-chips">
+          <span class="chip ct">PostgreSQL</span><span class="chip ct">SQL</span><span class="chip cs">Power BI</span><span class="chip cg">DAX</span>
+        </div>
+      </div>
+      <div class="p-arrow">↗</div>
+    </a>
+
+    <a class="pcard" href="https://github.com/sushma-bukkapuram/rfm-customer-segmentation" target="_blank">
+      <div>
+        <div class="p-num">Project 02</div>
+        <div class="p-title">RFM Customer Segmentation & K-Means Clustering</div>
+        <div class="p-desc">Analyzed 250K+ customer records to build an RFM scoring model, then applied K-Means clustering to find 5 meaningful customer tiers. Targeted win-back campaigns at the "at-risk" cluster — repeat purchases went up 17%.</div>
+        <div class="p-chips">
+          <span class="chip ct">Python</span><span class="chip ct">Scikit-learn</span><span class="chip cs">Pandas</span><span class="chip cg">Seaborn</span>
+        </div>
+      </div>
+      <div class="p-arrow">↗</div>
+    </a>
+
+    <a class="pcard" href="https://github.com/sushma-bukkapuram/ab-testing-email-framework" target="_blank">
+      <div>
+        <div class="p-num">Project 03</div>
+        <div class="p-title">A/B Testing Framework for Email Campaign Optimization</div>
+        <div class="p-desc">Built a reusable pipeline with proper power analysis, sample size calculation, and false discovery rate correction. Most marketing A/B tests are broken by design — this framework fixes that. Used across 10+ campaigns: +8% open rates and +6% CTR.</div>
+        <div class="p-chips">
+          <span class="chip ct">Python</span><span class="chip ct">SciPy</span><span class="chip cs">Statsmodels</span><span class="chip cg">Tableau</span>
+        </div>
+      </div>
+      <div class="p-arrow">↗</div>
+    </a>
+  </div>
+</section>
+
+<hr class="divider">
+
+<section id="experience">
+  <div class="eyebrow">Experience</div>
+  <h2>Where I've grown<br>and what I've delivered</h2>
+
+  <div class="exp-list">
+    <div class="exp-item">
+      <div>
+        <div class="exp-period">Sep 2025 – Present</div>
+        <div class="exp-loc">Dallas, TX</div>
+        <div class="exp-dot"></div>
+      </div>
+      <div>
+        <div class="exp-role">Digital Marketing Analyst Intern</div>
+        <div class="exp-co">Marketives</div>
+        <ul class="exp-pts">
+          <li>Analyzed <strong>8+ campaigns</strong> across GA4 and Meta Ads Manager — tracking engagement, CTR, and audience growth</li>
+          <li>Improved engagement rate by <strong>18%</strong> and campaign CTR by <strong>12%</strong> within 3 months</li>
+          <li>Built weekly Power BI KPI dashboards — optimized ad spend allocation by <strong>15%</strong></li>
+          <li>Attribution analysis across paid social, organic, and email drove <strong>22% more event registrations</strong></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div>
+        <div class="exp-period">Jan 2022 – Jun 2024</div>
+        <div class="exp-loc">Bangalore, India</div>
+        <div class="exp-dot"></div>
+      </div>
+      <div>
+        <div class="exp-role">Sales Data Analyst — B2B & B2C Analytics</div>
+        <div class="exp-co">Intellipaat Software Solutions</div>
+        <ul class="exp-pts">
+          <li>Analyzed <strong>250K+ customer records</strong> in PostgreSQL/MySQL — improved lead-to-conversion rate by <strong>14%</strong> over 18 months</li>
+          <li>Built <strong>20+ Power BI dashboards</strong> tracking CAC, LTV, and revenue by segment — cut manual reporting by 40%</li>
+          <li>RFM segmentation + K-Means clustering targeted campaigns boosted repeat purchases by <strong>17%</strong> in B2C</li>
+          <li>Automated CRM and funnel reporting via Python + SQL — saved <strong>~10 hours/week</strong></li>
+          <li>Designed first-touch and multi-touch attribution models that influenced budget reallocation decisions</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div>
+        <div class="exp-period">Apr 2021 – Sep 2021</div>
+        <div class="exp-loc">Hyderabad, India</div>
+        <div class="exp-dot"></div>
+      </div>
+      <div>
+        <div class="exp-role">Marketing Analyst Intern</div>
+        <div class="exp-co">PepsiCo</div>
+        <ul class="exp-pts">
+          <li>Cleaned and transformed <strong>15K+ user engagement records</strong> using Excel and Power Query</li>
+          <li>Funnel analysis identified a <strong>25% onboarding drop-off</strong> — fix improved completion rate by 11%</li>
+          <li>A/B tested <strong>10+ email campaigns</strong> — open rates +8%, CTR +6%</li>
+          <li>Recognized as <strong>Community Champion</strong> for data-driven communication and team engagement</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<section id="education">
+  <div class="eyebrow">Education</div>
+  <h2>Rigorous academics<br>with real recognition</h2>
+
+  <div class="edu-card">
+    <div class="edu-top">
+      <div>
+        <div class="edu-period">Aug 2024 — May 2026</div>
+        <div class="edu-degree">M.S. in Business Analytics & AI (STEM)</div>
+        <div class="edu-school">The University of Texas at Dallas · Naveen Jindal School of Management</div>
+      </div>
+      <div class="edu-honors">
+        <div class="hbadge hg">★ Dean's Excellence Scholarship Awardee</div>
+        <div class="hbadge hs">◎ Scholar With Recognition — Top Academic Performance</div>
+      </div>
+    </div>
+    <div class="edu-body">
+      <div class="course-lbl">Relevant coursework · 10 courses</div>
+      <div class="course-grid">
+        <div class="course-item"><span class="cn">01</span> Web Analytics</div>
+        <div class="course-item"><span class="cn">02</span> Business Analytics with R</div>
+        <div class="course-item"><span class="cn">03</span> Database Foundations for Business Analytics</div>
+        <div class="course-item"><span class="cn">04</span> Advanced Statistics for Data Science</div>
+        <div class="course-item"><span class="cn">05</span> Predictive Analytics</div>
+        <div class="course-item"><span class="cn">06</span> Prescriptive Analytics</div>
+        <div class="course-item"><span class="cn">07</span> Data Warehousing</div>
+        <div class="course-item"><span class="cn">08</span> CRM with Salesforce</div>
+        <div class="course-item"><span class="cn">09</span> Foundations of Digital Product Management</div>
+        <div class="course-item"><span class="cn">10</span> Econometrics & Time Series Analysis</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<section id="skills">
+  <div class="eyebrow">Skills</div>
+  <h2>The tools I<br>work with daily</h2>
+
+  <div class="sk-grid">
+    <div class="sk-card"><div class="sk-icon">🗃️</div><div class="sk-title">Data & Databases</div><div class="sk-tags"><span class="stag">SQL</span><span class="stag">PostgreSQL</span><span class="stag">MySQL</span><span class="stag">SAP HANA</span><span class="stag">Power Query</span></div></div>
+    <div class="sk-card"><div class="sk-icon">🐍</div><div class="sk-title">Programming</div><div class="sk-tags"><span class="stag">Python</span><span class="stag">Pandas</span><span class="stag">NumPy</span><span class="stag">Matplotlib</span><span class="stag">Seaborn</span><span class="stag">R</span></div></div>
+    <div class="sk-card"><div class="sk-icon">📊</div><div class="sk-title">BI & Visualization</div><div class="sk-tags"><span class="stag">Power BI</span><span class="stag">Tableau</span><span class="stag">Looker</span><span class="stag">Excel</span><span class="stag">SAP Lumira</span></div></div>
+    <div class="sk-card"><div class="sk-icon">🔬</div><div class="sk-title">Analytics Methods</div><div class="sk-tags"><span class="stag">A/B Testing</span><span class="stag">RFM</span><span class="stag">Cohort Analysis</span><span class="stag">Attribution</span><span class="stag">K-Means</span></div></div>
+    <div class="sk-card"><div class="sk-icon">📣</div><div class="sk-title">Marketing Platforms</div><div class="sk-tags"><span class="stag">Google Analytics 4</span><span class="stag">Meta Ads</span><span class="stag">HubSpot</span><span class="stag">Salesforce</span><span class="stag">Marketo</span></div></div>
+    <div class="sk-card"><div class="sk-icon">🤝</div><div class="sk-title">Collaboration</div><div class="sk-tags"><span class="stag">Jira</span><span class="stag">Agile</span><span class="stag">Asana</span><span class="stag">Confluence</span><span class="stag">Lucidchart</span></div></div>
+  </div>
+
+  <div class="cert-row">
+    <div class="cert"><span>☁️</span> Salesforce Certified Platform Administrator</div>
+    <div class="cert"><span>🔷</span> Microsoft Transact-SQL</div>
+    <div class="cert"><span>📈</span> Tableau Desktop Specialist</div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<section id="contact">
+  <div class="eyebrow">Contact</div>
+  <h2>Let's build something<br>great together</h2>
+
+  <div class="contact-wrap">
+    <div class="contact-intro">
+      <p>I'm actively looking for full-time roles in <strong>marketing analytics, BI, and growth analytics</strong> across the US. I'm a quick learner, a team player, and someone who genuinely gets excited about data problems.</p>
+      <p>Available from <strong>May 2026</strong>. Whether you have a role in mind, want to collaborate, or just want to talk about marketing and data — my inbox is always open. 😊</p>
+      <div class="auth-box">✓ &nbsp;Authorized to work in the US — no visa sponsorship required</div>
+    </div>
+
+    <div class="contact-links">
+      <a class="cl" href="mailto:bukkapuramsushma01@gmail.com">
+        <div><div class="cl-lbl">Email</div><div class="cl-val">bukkapuramsushma01@gmail.com</div></div>
+        <span class="cl-arr">→</span>
+      </a>
+      <a class="cl" href="https://www.linkedin.com/in/sushmautd" target="_blank">
+        <div><div class="cl-lbl">LinkedIn</div><div class="cl-val">linkedin.com/in/sushmautd</div></div>
+        <span class="cl-arr">→</span>
+      </a>
+      <a class="cl" href="https://github.com/sushma-bukkapuram" target="_blank">
+        <div><div class="cl-lbl">GitHub</div><div class="cl-val">github.com/sushma-bukkapuram</div></div>
+        <span class="cl-arr">→</span>
+      </a>
+      <a class="cl" href="https://sushma-bukkapuram.github.io" target="_blank">
+        <div><div class="cl-lbl">Portfolio website</div><div class="cl-val">sushma-bukkapuram.github.io</div></div>
+        <span class="cl-arr">→</span>
+      </a>
+      <div class="cl" style="cursor:default;">
+        <div><div class="cl-lbl">Phone</div><div class="cl-val">(469) 947-4018</div></div>
+        <span class="cl-arr" style="opacity:0.3;">→</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Sushma Bukkapuram · Made with curiosity ☕</p>
+  <p>Dallas, TX · Open to relocation · <a href="https://sushma-bukkapuram.github.io">sushma-bukkapuram.github.io</a></p>
+</footer>
+
+</body>
+</html>
